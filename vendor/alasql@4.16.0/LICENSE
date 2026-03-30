@@ -1,12 +1,12 @@
-https://github.com/KaTeX/KaTeX
+https://unpkg.com/alasql@4.17.0/dist/alasql.min.js
 
-Fast math typesetting for the web.
+AlaSQL.js - JavaScript SQL database for browser and Node.js. Handles both traditional relational tables and nested JSON data (NoSQL). Export, store, and import data from localStorage, IndexedDB, or Excel.
 
 ================
 
 The MIT License (MIT)
 
-Copyright (c) 2013-2020 Khan Academy and other contributors
+Copyright 2014-2025 Andrey Gershun (agershun@gmail.com) & Mathias Wulff (m@rawu.dk)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

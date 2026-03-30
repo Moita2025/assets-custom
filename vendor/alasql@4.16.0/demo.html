@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>AlaSQL 离线 Demo</title>
+    <script src="alasql.min.js"></script>
+</head>
+<body>
+
+<h2>AlaSQL 离线 Demo</h2>
+<button onclick="runSQL()">执行 SQL</button>
+
+<pre id="output"></pre>
+
+<script>
+function runSQL() {
+
+    // 创建表
+    alasql("CREATE TABLE IF NOT EXISTS users1 (id INT, name STRING, age INT)");
+
+    // 插入数据
+    alasql("INSERT INTO users1 VALUES (1,'Alice',25)");
+    alasql("INSERT INTO users1 VALUES (2,'Bob',30)");
+    alasql("INSERT INTO users1 VALUES (3,'Charlie',28)");
+
+    // 查询数据
+    let res = alasql("SELECT * FROM users1 WHERE age > 26");
+
+    // 输出
+    document.getElementById("output").textContent =
+        JSON.stringify(res, null, 2);
+
+    const data = [
+        {id:1,name:"Alice",age:25},
+        {id:2,name:"Bob",age:30}
+    ];
+
+    alasql("CREATE TABLE users2");
+    alasql.tables.users2.data = data;
+
+    res = alasql("SELECT * FROM users2");
+    console.log(res);
+}
+</script>
+
+</body>
+</html>
