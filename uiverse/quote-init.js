@@ -67,7 +67,7 @@ function renderSingleQuoteCard(card) {
 
 // 渲染全部
 function quoteCardRender(root = document) {
-    const cards = root.querySelectorAll('quotecard');
+    const cards = root.querySelectorAll('.quotecard');
     cards.forEach(renderSingleQuoteCard);
 }
 
