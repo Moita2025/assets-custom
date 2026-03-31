@@ -6,9 +6,9 @@ function renderSingleQuoteCard(card) {
     const nameEl = card.querySelector('.quote-name');
     const titleEl = card.querySelector('.quote-title');
 
-    const contentText = contentEl?.textContent.trim() || '';
-    const nameText = nameEl?.textContent.trim() || '';
-    const titleText = titleEl?.textContent.trim() || '';
+    const contentText = contentEl?.innerHTML.trim() || '';
+    const nameText = nameEl?.innerHTML.trim() || '';
+    const titleText = titleEl?.innerHTML.trim() || '';
 
     // 如果没有内容就跳过
     if (!contentText) return;
@@ -30,7 +30,7 @@ function renderSingleQuoteCard(card) {
 
     const paraContent = document.createElement('p');
     paraContent.className = "para";
-    paraContent.textContent = contentText;
+    paraContent.innerHTML = contentText;
 
     wordsDiv.append(iconImg, paraContent);
     contentDiv.appendChild(wordsDiv);
@@ -42,14 +42,14 @@ function renderSingleQuoteCard(card) {
 
         if (nameText) {
             const strongName = document.createElement('strong');
-            strongName.textContent = nameText;
+            strongName.innerHTML = nameText;
             footerDiv.appendChild(strongName);
         }
 
         if (titleText) {
             const paraTitle = document.createElement('p');
             paraTitle.className = "para";
-            paraTitle.textContent = titleText;
+            paraTitle.innerHTML = titleText;
             footerDiv.appendChild(paraTitle);
         }
 
